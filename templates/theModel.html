@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rake</title>
+    </head>
+    <body>
+        <div align="center">{{winStatement}}</div>
+        {% for anOldGuess in listOfGuesses %}
+            <table align="center">
+                <tr>
+                    <td id="leftClue">{{anOldGuess.clue0}}</td>
+                    <td>{{anOldGuess.clue1}}</td>
+                    <td>{{anOldGuess.clue2}}</td>
+                    <td>{{anOldGuess.clue3}}</td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="oldGuessAt0">{{anOldGuess.spot0}}</td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="oldGuessAt1">{{anOldGuess.spot1}}</td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="oldGuessAt2">{{anOldGuess.spot2}}</td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="oldGessAt3">{{anOldGuess.spot3}}</td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="rightClue"></td>
+                </tr>
+            </table>
+        {% endfor %}
+
+        <form method="post">
+
+            <table align="center">
+                <tr>
+                    <td id="guessAt0">
+                        <input type="text" size="1" name="guessAt0" value="{{guessAt0}}"/>
+                    </td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="guessAt1">
+                        <input type="text" size="1" name="guessAt1" value="{{guessAt1}}"/>
+                    </td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="guessAt2">
+                        <input type="text" size="1" name="guessAt2" value="{{guessAt2}}"/>
+                    </td>
+                    <td class="guessBorderColumn">|</td>
+                    <td id="guessAt3">
+                        <input type="text" size="1" name="guessAt3" value="{{guessAt3}}"/>
+                    </td>
+                </tr>
+            </table>
+            <div align="center">{{error}}</div>
+            <table align="center">
+                <tr>
+                    <td id="guessSubmit">
+                        <input type="submit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="getRidOfThis">
+            {{theAnswerList}}
+        </div>
+    </body>
+    </html>
