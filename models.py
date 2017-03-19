@@ -7,7 +7,10 @@ class AnswerObj(db.Model):
     spot1 = db.StringProperty(required = True)
     spot2 = db.StringProperty(required = True)
     spot3 = db.StringProperty(required = True)
-    
+
+    countCode = db.IntegerProperty(required = True)
+
+
 
 
 class GuessObj(db.Model):
